@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plan of Safe Care</title>
+<meta name="description" content="Research and information on Plans of Safe Care for infants with prenatal substance exposure and their families.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column with a sticky section nav; policy timeline as a vertical ledger of statute years. */
+:root {
+  --bg: #f6f8f7;
+  --surface: #ffffff;
+  --ink: #16312e;
+  --muted: #4f6663;
+  --line: #d3dedb;
+  --brand: #1f5c55;
+  --brand-soft: #e3eeeb;
+  --accent: #b7791f;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --measure: 66ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1a19; --surface: #152321; --ink: #e4eeeb; --muted: #9fb4b0;
+    --line: #2a3d3a; --brand: #7cc4b8; --brand-soft: #1b302d; --accent: #e0a54a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1a19; --surface: #152321; --ink: #e4eeeb; --muted: #9fb4b0;
+  --line: #2a3d3a; --brand: #7cc4b8; --brand-soft: #1b302d; --accent: #e0a54a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  margin: 0;
+}
+a { color: var(--brand); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; max-width: var(--measure); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: clamp(16px, 5vw, 40px); }
+
+/* Header */
+header.site {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.wordmark { font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.wordmark span { color: var(--brand); }
+nav.sections { display: flex; gap: 4px 20px; flex-wrap: wrap; font-size: 0.9rem; font-weight: 500; }
+nav.sections a { color: var(--muted); text-decoration: none; }
+nav.sections a:hover { color: var(--brand); }
+
+/* Hero */
+.hero { padding-block: clamp(48px, 9vw, 96px) clamp(40px, 6vw, 64px); border-bottom: 1px solid var(--line); }
+.eyebrow { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; display: block; }
+.hero h1 { font-size: clamp(2.3rem, 6vw, 3.9rem); max-width: 18ch; letter-spacing: -0.015em; }
+.hero p.lede { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--muted); margin-top: 22px; max-width: 58ch; }
+.statute {
+  margin-top: 32px; display: inline-flex; flex-wrap: wrap; gap: 6px 14px;
+  font-family: var(--mono); font-size: 0.85rem; color: var(--muted);
+  border-left: 3px solid var(--brand); padding: 6px 0 6px 14px;
+}
+.statute b { color: var(--ink); font-weight: 500; }
+
+/* Sections */
+section.block { padding-block: clamp(48px, 7vw, 80px); border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+section.block h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); margin-bottom: 20px; }
+.prose { display: grid; gap: 16px; }
+.two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 48px; margin-top: 36px; }
+@media (max-width: 760px) { .two-col { grid-template-columns: minmax(0, 1fr); } }
+.two-col h3 { font-family: var(--body); font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.two-col p { color: var(--muted); font-size: 1rem; }
+
+/* Requirements list */
+ol.reqs { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); max-width: 760px; }
+ol.reqs li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 12px; padding-block: 16px; border-bottom: 1px solid var(--line); }
+ol.reqs .n { font-family: var(--mono); color: var(--brand); font-weight: 500; font-variant-numeric: tabular-nums; padding-top: 2px; }
+ol.reqs strong { display: block; font-weight: 600; }
+ol.reqs span.d { color: var(--muted); font-size: 0.98rem; }
+
+/* Timeline */
+.timeline { margin-top: 32px; display: grid; gap: 0; max-width: 820px; }
+.tl-row { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 20px; padding-block: 18px; border-top: 1px solid var(--line); }
+.tl-row:last-child { border-bottom: 1px solid var(--line); }
+.tl-year { font-family: var(--mono); font-size: 1.05rem; font-weight: 500; color: var(--brand); font-variant-numeric: tabular-nums; }
+.tl-row h3 { font-family: var(--body); font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.tl-row p { color: var(--muted); font-size: 0.98rem; }
+.tl-row.key .tl-year { color: var(--accent); }
+
+/* Research */
+.pub {
+  margin-top: 32px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 6px; padding: clamp(20px, 3vw, 32px); max-width: 820px;
+}
+.pub .tag { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.pub h3 { font-size: 1.55rem; margin-top: 8px; }
+.pub .authors { margin-top: 10px; color: var(--muted); font-size: 0.95rem; }
+.pub .cite { margin-top: 6px; font-family: var(--mono); font-size: 0.82rem; color: var(--muted); overflow-wrap: anywhere; }
+.pub p.sum { margin-top: 16px; }
+.projects { margin-top: 40px; display: grid; gap: 0; max-width: 820px; border-top: 1px solid var(--line); }
+.project { padding-block: 20px; border-bottom: 1px solid var(--line); display: grid; gap: 6px; }
+.project .meta { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+.project h3 { font-family: var(--body); font-size: 1.05rem; font-weight: 700; }
+.project p { color: var(--muted); font-size: 0.98rem; }
+h3.sub { font-family: var(--body); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 48px; }
+
+/* Resources */
+ul.links { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+ul.links li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; display: grid; gap: 6px; align-content: start; }
+ul.links a { font-weight: 600; text-decoration: none; }
+ul.links a:hover { text-decoration: underline; }
+ul.links .src { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.03em; }
+ul.links p { font-size: 0.95rem; color: var(--muted); }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px 56px; align-items: start; }
+@media (max-width: 760px) { .about { grid-template-columns: minmax(0, 1fr); } }
+.contact { background: var(--brand-soft); border-radius: 6px; padding: 24px; display: grid; gap: 10px; font-size: 0.98rem; }
+.contact .label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.placeholder { background: color-mix(in srgb, var(--accent) 18%, transparent); padding: 0 4px; border-radius: 3px; }
+
+footer { padding-block: 32px 48px; color: var(--muted); font-size: 0.88rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+/* State explorer */
+:root {
+  --c-open: #2e6a8a; --c-all: #8c3b58; --c-alt: #a8741c; --c-hosp: #2f7d5f; --c-dual: #6b56a6; --c-none: #8a9794; --tile-ink: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --c-open: #7fb8d6; --c-all: #e39ab4; --c-alt: #e3b35f; --c-hosp: #7ccaa8; --c-dual: #b6a4ea; --c-none: #6f7f7b; --tile-ink: #0f1a19; }
+}
+:root[data-theme="dark"] { --c-open: #7fb8d6; --c-all: #e39ab4; --c-alt: #e3b35f; --c-hosp: #7ccaa8; --c-dual: #b6a4ea; --c-none: #6f7f7b; --tile-ink: #0f1a19; }
+.explorer { margin-top: 32px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px 48px; align-items: start; }
+@media (max-width: 860px) { .explorer { grid-template-columns: minmax(0, 1fr); } }
+.picker { display: grid; gap: 8px; margin-bottom: 18px; max-width: 320px; }
+.picker label { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.picker select { font: inherit; font-size: 1rem; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.tilemap { display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 4px; max-width: 560px; }
+.tile { aspect-ratio: 1; max-width: 100%; border: 0; border-radius: 4px; font-family: var(--mono); font-size: clamp(0.62rem, 1.6vw, 0.82rem); font-weight: 500; color: var(--tile-ink); cursor: pointer; padding: 0; transition: transform .12s ease, box-shadow .12s ease; }
+.tile:hover { transform: translateY(-1px); }
+.tile[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ink); }
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile:hover { transform: none; } }
+.legend { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; max-width: 560px; }
+.legend li { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; font-size: 0.92rem; }
+.legend .sw { width: 14px; height: 14px; border-radius: 3px; align-self: center; }
+.legend .ct { font-family: var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.legend b { font-weight: 600; }
+.legend span.d { color: var(--muted); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: clamp(20px, 3vw, 28px); display: grid; gap: 18px; }
+.panel .kicker { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.panel h3 { font-size: 1.8rem; }
+.chip { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; padding: 4px 10px 4px 8px; border-radius: 999px; background: var(--brand-soft); }
+.chip i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.panel dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.panel dl > div { padding-block: 12px; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.panel dt { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+.panel dd { margin: 0; font-size: 0.98rem; }
+.panel dd.none { color: var(--muted); font-style: italic; }
+.panel p.desc { color: var(--muted); font-size: 0.95rem; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.stat b { display: block; font-family: var(--display); font-size: 2rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.9rem; color: var(--muted); }
+.datanote { margin-top: 28px; font-size: 0.88rem; color: var(--muted); max-width: 80ch; }
+.legendcite { margin-top: 14px; font-size: 0.82rem; color: var(--muted); max-width: 560px; overflow-wrap: anywhere; }
+.statenote { font-size: 0.92rem; background: color-mix(in srgb, var(--accent) 14%, transparent); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 4px 4px 0; }
+.linkbtn { font: inherit; font-size: 0.9rem; background: none; border: 0; padding: 0; color: var(--brand); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; justify-self: start; }
+</style>
+</head>
+<body>
+
+
+<header class="site">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Plan of <span>Safe Care</span></a>
+    <nav class="sections" aria-label="Sections">
+      <a href="#what">What it is</a>
+      <a href="#history">Policy history</a>
+      <a href="#states">Your state</a>
+      <a href="#research">Research</a>
+      <a href="#resources">Resources</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <span class="eyebrow">Prenatal substance exposure &middot; Child welfare &middot; Health policy</span>
+    <h1>Plans of Safe Care, explained and studied</h1>
+    <p class="lede">Every state has to have a way to support infants affected by prenatal substance exposure and their families. How states do it varies widely. This site collects plain-language information on Plans of Safe Care and shares research on how these policies work in practice.</p>
+    <div class="statute"><b>CAPTA &sect;106(b)(2)(B)(ii)&ndash;(iii)</b><span>42 U.S.C. &sect;5106a</span><span>as amended by P.L. 114-198 (2016)</span></div>
+  </div>
+
+  <section class="block" id="what">
+    <div class="wrap">
+      <h2>What is a Plan of Safe Care?</h2>
+      <div class="prose">
+        <p>A Plan of Safe Care is a plan for an infant who was affected by substance use before birth, and for that infant&rsquo;s parents or caregivers. It lays out the services and supports the family needs after the baby goes home, such as substance use treatment, health care, and help with parenting.</p>
+        <p>The requirement comes from the federal Child Abuse Prevention and Treatment Act (CAPTA). States that accept CAPTA funding must give the federal government an assurance, signed by the governor, that they have policies in place to identify these infants, notify child protective services, and develop a plan for each one.</p>
+      </div>
+
+      <ol class="reqs" aria-label="Core federal requirements">
+        <li><span class="n">1</span><div><strong>Identify</strong><span class="d">Recognize infants born affected by substance use, withdrawal symptoms from prenatal drug exposure, or a Fetal Alcohol Spectrum Disorder.</span></div></li>
+        <li><span class="n">2</span><div><strong>Notify</strong><span class="d">Health care providers involved in the infant&rsquo;s delivery or care notify the child protective services system.</span></div></li>
+        <li><span class="n">3</span><div><strong>Plan</strong><span class="d">Develop a Plan of Safe Care that addresses the health and substance use disorder treatment needs of the infant and the family or caregiver.</span></div></li>
+        <li><span class="n">4</span><div><strong>Monitor and report</strong><span class="d">Track whether local agencies refer families to services and deliver them, and report annual counts to the federal government.</span></div></li>
+      </ol>
+
+      <div class="two-col">
+        <div>
+          <h3>A notification is not a report of abuse</h3>
+          <p>Federal guidance treats a notification to child protective services as a way to connect the family to support. On its own, a notification is not a finding of child abuse or neglect.</p>
+        </div>
+        <div>
+          <h3>States decide the details</h3>
+          <p>Federal law leaves most of the design to states: which infants qualify, who creates the plan, whether child protective services opens a case, and which agency follows up. As a result, a family&rsquo;s experience can look very different from one state to the next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="history">
+    <div class="wrap">
+      <h2>How the policy developed</h2>
+      <p>Plans of Safe Care have been part of federal law for more than twenty years. The 2016 amendments broadened who is covered and made families, not only infants, part of the plan.</p>
+      <div class="timeline">
+        <div class="tl-row"><span class="tl-year">1974</span><div><h3>CAPTA enacted</h3><p>Congress creates federal funding for state efforts to prevent, investigate, and respond to child abuse and neglect.</p></div></div>
+        <div class="tl-row"><span class="tl-year">2003</span><div><h3>Plans of Safe Care first required</h3><p>States must have policies to notify child protective services about infants affected by illegal substance abuse or withdrawal, and to develop a plan of safe care for those infants.</p></div></div>
+        <div class="tl-row"><span class="tl-year">2010</span><div><h3>Fetal Alcohol Spectrum Disorder added</h3><p>The CAPTA reauthorization extends the requirement to infants affected by a Fetal Alcohol Spectrum Disorder.</p></div></div>
+        <div class="tl-row key"><span class="tl-year">2016</span><div><h3>Comprehensive Addiction and Recovery Act (CARA)</h3><p>Section 503 of CARA removes the word &ldquo;illegal,&rdquo; so the requirement covers all substances, including prescribed medications. Plans must now address the needs of the family or caregiver as well as the infant, and states must monitor services and report data.</p></div></div>
+        <div class="tl-row"><span class="tl-year">2018</span><div><h3>National data collection begins</h3><p>States begin reporting, through the National Child Abuse and Neglect Data System, how many affected infants were identified, how many received a plan, and how many were referred to services.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="block" id="states">
+    <div class="wrap">
+      <h2>What&rsquo;s happening in my state</h2>
+      <p>Every state meets the federal requirement in its own way. Choose a state to see how its Plan of Safe Care process works, what it is called, and how the state handles reporting during pregnancy and after birth.</p>
+
+      <div class="explorer">
+        <div>
+          <div class="picker">
+            <label for="state-select">Choose a state</label>
+            <select id="state-select"><option value="">All states</option></select>
+          </div>
+          <div class="tilemap" id="tilemap" role="group" aria-label="Map of states by approach"></div>
+          <ul class="legend" id="legend"></ul>
+          <p class="legendcite">Approach categories reflect state policy as of 2024. Source: Lloyd Sieger, M., Loch, S. F., Andraka-Christou, B., Stein, B. D., Levine, P., Caton, L., &amp; Patrick, S. W. (2026). A taxonomy of states&rsquo; approaches to plans of safe care. <i>Child Abuse &amp; Neglect</i>, 108169. <a href="https://doi.org/10.1016/j.chiabu.2026.108169">https://doi.org/10.1016/j.chiabu.2026.108169</a></p>
+        </div>
+        <div class="panel" id="panel" aria-live="polite"></div>
+      </div>
+
+      <p class="datanote">State approaches reflect policy as of 2024 and are classified using the taxonomy in Lloyd Sieger et al. (2026). Other details are based on a review of state statutes, regulations, and federally required child welfare reports (Annual Progress and Services Reports) through 2024. Information on reporting exemptions for medication for opioid use disorder comes from If/When/How: Lawyering for Reproductive Justice, <a href="https://ifwhenhow.org/wp-content/uploads/2026/02/2026-Prenatal-Drug-Exposure-CAPTA-Reporting-Requirements-for-Medical-Professionals.pdf">Prenatal Drug Exposure: CAPTA Reporting Requirements for Medical Professionals</a> (current as of June 2025). Information on the purpose of required reports comes from the National Institute on Alcohol Abuse and Alcoholism&rsquo;s Alcohol Policy Information System, <a href="https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/reporting-requirements/163/about-this-policy">Pregnancy and Alcohol: Reporting Requirements</a>. State policies change. If you know of an update for your state, please email <a href="mailto:msieger@kumc.edu">msieger@kumc.edu</a>.</p>
+    </div>
+  </section>
+
+  <section class="block" id="research">
+    <div class="wrap">
+      <h2>Research</h2>
+      <p>Our work looks at how states put Plans of Safe Care into practice, how those choices involve child protective services and health care systems, and what the policies mean for mothers and infants.</p>
+
+      <article class="pub">
+        <span class="tag">Published 2026 &middot; Child Abuse &amp; Neglect</span>
+        <h3>A taxonomy of states&rsquo; approaches to plans of safe care</h3>
+        <p class="authors">Margaret Lloyd Sieger, Sarah F. Loch, Barbara Andraka-Christou, Bradley D. Stein, Phoebe Levine, Lauren Caton, Stephen W. Patrick</p>
+        <p class="cite">doi: <a href="https://doi.org/10.1016/j.chiabu.2026.108169">10.1016/j.chiabu.2026.108169</a></p>
+        <p class="sum">After the 2016 amendments, each state had to work out its own Plan of Safe Care process. We reviewed state statutes, regulations, and federally required child welfare reports to sort state approaches by how closely they tie the process to child protective services and to health care systems.</p>
+      </article>
+
+      <h3 class="sub">Current projects</h3>
+      <div class="projects">
+        <div class="project">
+          <span class="meta">NIDA &middot; 1R01DA056436-01A1 &middot; 2023&ndash;2028</span>
+          <h3>Improving Outcomes for Substance-Affected Families in the Child Welfare System</h3>
+          <p>Principal Investigator: <a href="https://sph.emory.edu/profile/faculty/stephen-patrick">Stephen W. Patrick, MD, MPH, MS</a>, Rollins School of Public Health, Emory University. National Institute on Drug Abuse, August 2023 to July 2028.</p>
+          <p>This study evaluates how states have put Plans of Safe Care into practice. It reviews state laws, regulations, and guidance to classify each state&rsquo;s approach; tests whether state actions are linked to fewer infant foster care placements and fewer emergency department visits for injuries from abuse; and interviews caseworkers, judges, clinicians, and others about what helps or gets in the way of implementation.</p>
+        </div>
+        <div class="project">
+          <span class="meta">NIDA &middot; K01DA058060 &middot; 2023&ndash;2028</span>
+          <h3>Public Policy &amp; Health for Substance-Exposed Infant-Mother Dyads</h3>
+          <p>Principal Investigator: Margaret Lloyd Sieger. National Institute on Drug Abuse, June 2023 to June 2028.</p>
+          <p>In 2019, Connecticut became the only state where community providers develop plans with mothers without sharing their identifying information with child protective services. This study links three state administrative databases and follows mothers over time with a survey to test how these plans affect substance use treatment, child safety, and involvement with child protective services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="resources">
+    <div class="wrap">
+      <h2>Resources</h2>
+      <p>Guidance and reports from federal agencies and national organizations.</p>
+      <ul class="links">
+        <li><span class="src">HHS &middot; SAMHSA and ACF</span><a href="https://ncsacw.acf.hhs.gov/">National Center on Substance Abuse and Child Welfare</a><p>Federal technical assistance on prenatal substance exposure, Plans of Safe Care, and state implementation.</p></li>
+        <li><span class="src">U.S. GAO &middot; GAO-18-196</span><a href="https://www.gao.gov/products/gao-18-196">Substance-Affected Infants</a><p>A 2018 federal review of state notification policies, plan requirements, and the help states wanted from HHS.</p></li>
+        <li><span class="src">If/When/How &middot; 2025</span><a href="https://ifwhenhow.org/wp-content/uploads/2026/02/2026-Prenatal-Drug-Exposure-CAPTA-Reporting-Requirements-for-Medical-Professionals.pdf">Prenatal Drug Exposure: CAPTA Reporting Requirements for Medical Professionals</a><p>A state-by-state guide to when health care providers must report prenatal substance exposure, including exemptions for prescribed medications.</p></li>
+        <li><span class="src">Casey Family Programs</span><a href="https://www.casey.org/infant-plans-of-safe-care/">Infant Plans of Safe Care</a><p>An overview of how jurisdictions have designed and carried out Plans of Safe Care.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div class="prose">
+        <h2>About</h2>
+        <p>This site is maintained by <a href="https://www.kumc.edu/m399l906.html">Margaret Lloyd Sieger, PhD, MS</a>, Associate Professor in the Department of Population Health at the University of Kansas School of Medicine. She is also a Certified Peer Specialist.</p>
+        <p>Her research focuses on policies and interventions for parents with substance use disorders who are involved with child welfare, especially pregnant mothers and families with infants and young children. She studies state policy on substance-exposed infants, family treatment courts, and how best practices are put in place. She has published more than 50 peer-reviewed articles.</p>
+        <p>Earlier work is published under the name Margaret H. Lloyd.</p>
+      </div>
+      <div class="contact">
+        <span class="label">Contact</span>
+        <span>Department of Population Health<br>University of Kansas School of Medicine<br>Kansas City, Kansas</span>
+        <a href="mailto:msieger@kumc.edu">msieger@kumc.edu</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>planofsafecare.org</span>
+    <span>Information on this site is for education and research. It is not legal advice.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var DATA = [{"st":"AL","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"No","purp":[],"moud":true,"yr":2018,"src":"State Report"},{"st":"AZ","cat":"All CPS Referrals","name":"Infant Care Plan","can":"No","svc":"No","purp":["Public health data","Referral to child welfare"],"moud":true,"yr":2018,"src":"State Report"},{"st":"CO","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data"],"moud":true,"yr":2021,"src":"Statute"},{"st":"GA","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data","Referral for assessment or treatment","Referral to child welfare"],"moud":true,"yr":2017,"src":"State Report"},{"st":"IA","cat":"All CPS Referrals","name":"Not named in state reports","can":"No","svc":"Yes","purp":["Referral for assessment or treatment","Referral to child welfare"],"moud":true,"yr":2016,"src":"State Report"},{"st":"IN","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"Yes","svc":"Yes","purp":["Public health data","Referral for assessment or treatment","Referral to child welfare"],"moud":true,"yr":2019,"src":"State Report"},{"st":"KY","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data"],"moud":false,"yr":2015,"src":"State Report"},{"st":"NJ","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"Unclear","purp":["Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2019,"src":"State Report"},{"st":"OH","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data"],"moud":true,"yr":2018,"src":"Statute"},{"st":"OK","cat":"All CPS Referrals","name":null,"can":"No","svc":"No","purp":["Public health data","Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2013,"src":"Statute"},{"st":"OR","cat":"All CPS Referrals","name":"Plan of Care","can":"No","svc":"No","purp":["Public health data","Referral for assessment or treatment"],"moud":false,"yr":2018,"src":"Statute"},{"st":"VA","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"In some local areas","purp":["Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2021,"src":"Statute"},{"st":"WV","cat":"All CPS Referrals","name":"Plan of Safe Care","can":"No","svc":"Yes","purp":[],"moud":true,"yr":2015,"src":"State Report"},{"st":"DC","cat":"Alternative Response","name":"Plan of Safe Care","can":null,"svc":null,"purp":[],"moud":true,"yr":2017,"src":"State Report"},{"st":"DE","cat":"Alternative Response","name":"Plan of Safe Care; Medical Plan of Safe Care","can":"No","svc":"No","purp":["Public health data","Referral to child welfare"],"moud":true,"yr":2018,"src":"State Report"},{"st":"FL","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"Yes","purp":["Public health data","Referral for assessment or treatment","Referral to child welfare"],"moud":true,"yr":2018,"src":"State Report"},{"st":"KS","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"Yes","purp":["Public health data","Referral to child welfare"],"moud":false,"yr":2018,"src":"State Report"},{"st":"MD","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Referral to child welfare"],"moud":true,"yr":2013,"src":"State Report"},{"st":"ME","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"Yes","purp":["Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2016,"src":"State Report"},{"st":"MO","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"Yes","purp":["Referral to child welfare"],"moud":false,"yr":2017,"src":"State Report"},{"st":"MS","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"No","purp":[],"moud":false,"yr":2015,"src":"State Report"},{"st":"MT","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Referral to child welfare"],"moud":true,"yr":2020,"src":"State Report"},{"st":"NC","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"No","purp":[],"moud":false,"yr":2017,"src":"State Report"},{"st":"ND","cat":"Alternative Response","name":"Plan of Safe Care","can":"Yes","svc":"No","purp":["Public health data","Referral for assessment or treatment"],"moud":false,"yr":2017,"src":"State Report"},{"st":"PA","cat":"Alternative Response","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Referral for assessment or treatment"],"moud":false,"yr":2019,"src":"State Report"},{"st":"WI","cat":"Alternative Response","name":"Plan of Safe Care","can":"Yes","svc":"Unclear","purp":["Public health data","Referral to child welfare"],"moud":true,"yr":2004,"src":"State Report"},{"st":"LA","cat":"Dual Pathways","name":"Plan of Safe Care","can":"No","svc":"Yes","purp":["Public health data","Referral to child welfare"],"moud":true,"yr":2017,"src":"Statute"},{"st":"VT","cat":"Dual Pathways","name":"Plan of Safe Care","can":"Yes","svc":"No","purp":[],"moud":false,"yr":2020,"src":"State Report"},{"st":"CT","cat":"Hospital-initiated","name":"Family Care Plan (formerly Plan of Safe Care)","can":"No","svc":"Yes","purp":["Public health data","Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2019,"src":"State Report"},{"st":"MA","cat":"Hospital-initiated","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Referral to child welfare"],"moud":false,"yr":2015,"src":"State Report"},{"st":"NE","cat":"Hospital-initiated","name":"Plan of Safe Care; Prenatal Plan of Safe Care","can":"Yes","svc":"No","purp":[],"moud":false,"yr":2019,"src":"State Report"},{"st":"NH","cat":"Hospital-initiated","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Referral for assessment or treatment"],"moud":false,"yr":2018,"src":"Statute"},{"st":"NM","note":"New Mexico substantially changed its mandated reporting requirements in 2025. The reporting details below may not reflect those changes. Its approach is still hospital-initiated.","cat":"Hospital-initiated","name":"Plan of Care","can":"No","svc":"Unclear","purp":["Public health data","Referral for assessment or treatment"],"moud":false,"yr":2019,"src":"State Report"},{"st":"NV","cat":"Hospital-initiated","name":"CARA Plan of Care","can":"No","svc":"No","purp":["Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2021,"src":"Statute"},{"st":"RI","cat":"Hospital-initiated","name":"Safe Care Plan","can":"Only when other children live in the home","svc":"Unclear","purp":["Referral to child welfare"],"moud":false,"yr":2018,"src":"State Report"},{"st":"WY","cat":"Hospital-initiated","name":"Plan of Safe Care","can":"No","svc":"Unclear","purp":["Public health data"],"moud":false,"yr":2024,"src":"Statute"},{"st":"IL","cat":"No Policy","name":null,"can":"Only when other children live in the home","svc":"Yes","purp":["Public health data","Referral for assessment or treatment"],"moud":true,"yr":null,"src":"State Report"},{"st":"AK","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Referral to child welfare"],"moud":true,"yr":2016,"src":"State Report"},{"st":"AR","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Referral for assessment or treatment","Referral to child welfare"],"moud":true,"yr":2019,"src":"State Report"},{"st":"CA","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data","Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2015,"src":"State Report"},{"st":"HI","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":[],"moud":false,"yr":2018,"src":"State Report"},{"st":"ID","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"Yes","purp":[],"moud":false,"yr":2017,"src":"State Report"},{"st":"MI","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data","Referral to child welfare"],"moud":true,"yr":2017,"src":"State Report"},{"st":"MN","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"Yes","svc":"Yes","purp":["Referral for assessment or treatment","Referral to child welfare"],"moud":false,"yr":2017,"src":"State Report"},{"st":"NY","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data","Referral for assessment or treatment"],"moud":false,"yr":2011,"src":"State Report"},{"st":"SC","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data"],"moud":true,"yr":2018,"src":"State Report"},{"st":"SD","cat":"Open Child Welfare Case","name":"Family Wellness and Support Plan","can":"Yes","svc":"No","purp":["Referral to child welfare"],"moud":true,"yr":2018,"src":"State Report"},{"st":"TN","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":[],"moud":true,"yr":2018,"src":"State Report"},{"st":"TX","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":["Public health data"],"moud":true,"yr":2015,"src":"State Report"},{"st":"UT","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"Unclear","purp":["Referral to child welfare"],"moud":true,"yr":2017,"src":"State Report"},{"st":"WA","cat":"Open Child Welfare Case","name":"Plan of Safe Care","can":"No","svc":"No","purp":[],"moud":false,"yr":2014,"src":"State Report"}]
+;
+  var NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
+  var CATS = [
+    {key:"Open Child Welfare Case", color:"var(--c-open)", desc:"Plans are developed for families who have an open child welfare case."},
+    {key:"All CPS Referrals", color:"var(--c-all)", desc:"Every infant reported to child protective services gets a plan, developed by child welfare staff."},
+    {key:"Alternative Response", color:"var(--c-alt)", desc:"Plans are developed through a child welfare track that offers services without a formal investigation."},
+    {key:"Hospital-initiated", color:"var(--c-hosp)", desc:"Health care providers start the plan, usually before the infant leaves the hospital."},
+    {key:"Dual Pathways", color:"var(--c-dual)", desc:"Families can reach a plan through child welfare or through a separate health care route."},
+    {key:"No Policy", color:"var(--c-none)", desc:"No statewide Plan of Safe Care policy was identified."}
+  ];
+  var CAT = {}; CATS.forEach(function (c) { CAT[c.key] = c; });
+  var LAYOUT = [["AK",0,0],["ME",0,10],["WI",1,5],["VT",1,9],["NH",1,10],
+    ["WA",2,0],["ID",2,1],["MT",2,2],["ND",2,3],["MN",2,4],["IL",2,5],["MI",2,6],["NY",2,8],["MA",2,9],
+    ["OR",3,0],["NV",3,1],["WY",3,2],["SD",3,3],["IA",3,4],["IN",3,5],["OH",3,6],["PA",3,7],["NJ",3,8],["CT",3,9],["RI",3,10],
+    ["CA",4,0],["UT",4,1],["CO",4,2],["NE",4,3],["MO",4,4],["KY",4,5],["WV",4,6],["VA",4,7],["MD",4,8],["DE",4,9],
+    ["AZ",5,1],["NM",5,2],["KS",5,3],["AR",5,4],["TN",5,5],["NC",5,6],["SC",5,7],["DC",5,8],
+    ["OK",6,3],["LA",6,4],["MS",6,5],["AL",6,6],["GA",6,7],
+    ["HI",7,0],["TX",7,3],["FL",7,8]];
+  var BY = {}; DATA.forEach(function (d) { BY[d.st] = d; });
+
+  var map = document.getElementById("tilemap");
+  var sel = document.getElementById("state-select");
+  var panel = document.getElementById("panel");
+  var legend = document.getElementById("legend");
+  var current = "";
+
+  LAYOUT.forEach(function (t) {
+    var d = BY[t[0]]; if (!d) return;
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "tile"; b.textContent = t[0];
+    b.style.gridRow = (t[1] + 1); b.style.gridColumn = (t[2] + 1);
+    b.style.background = (CAT[d.cat] || CAT["No Policy"]).color;
+    b.setAttribute("aria-label", NAMES[t[0]] + ": " + d.cat);
+    b.setAttribute("aria-pressed", "false");
+    b.dataset.st = t[0];
+    b.addEventListener("click", function () { choose(current === t[0] ? "" : t[0]); });
+    map.appendChild(b);
+  });
+
+  Object.keys(NAMES).sort(function (a, b) { return NAMES[a].localeCompare(NAMES[b]); }).forEach(function (st) {
+    if (!BY[st]) return;
+    var o = document.createElement("option"); o.value = st; o.textContent = NAMES[st]; sel.appendChild(o);
+  });
+  sel.addEventListener("change", function () { choose(sel.value); });
+
+  CATS.forEach(function (c) {
+    var n = DATA.filter(function (d) { return d.cat === c.key; }).length;
+    var li = document.createElement("li");
+    li.innerHTML = '<i class="sw"></i><div><b></b> <span class="d"></span></div><span class="ct"></span>';
+    li.querySelector(".sw").style.background = c.color;
+    li.querySelector("b").textContent = c.key + ".";
+    li.querySelector(".d").textContent = c.desc;
+    li.querySelector(".ct").textContent = n;
+    legend.appendChild(li);
+  });
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (m) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]; }); }
+  function row(label, value, emptyText) {
+    var empty = value === null || value === undefined || value === "" || (Array.isArray(value) && !value.length);
+    var v = empty ? (emptyText || "Not identified") : (Array.isArray(value) ? value.join("; ") : value);
+    return '<div><dt>' + esc(label) + '</dt><dd' + (empty ? ' class="none"' : '') + '>' + esc(v) + '</dd></div>';
+  }
+
+  function overview() {
+    var total = DATA.length;
+    var moud = DATA.filter(function (d) { return d.moud; }).length;
+    var can = DATA.filter(function (d) { return d.can === "Yes"; }).length;
+    var named = DATA.filter(function (d) { return d.name === "Plan of Safe Care"; }).length;
+    panel.innerHTML =
+      '<span class="kicker">All states and DC</span>' +
+      '<h3>A national picture</h3>' +
+      '<div class="stats">' +
+        '<div class="stat"><b>' + total + '</b><span>states and DC reviewed</span></div>' +
+        '<div class="stat"><b>' + DATA.filter(function (d) { return d.cat !== "No Policy"; }).length + '</b><span>have a statewide Plan of Safe Care policy</span></div>' +
+        '<div class="stat"><b>' + moud + '</b><span>exempt medication for opioid use disorder, taken as prescribed, from reporting</span></div>' +
+        '<div class="stat"><b>' + can + '</b><span>accept child abuse and neglect reports during pregnancy</span></div>' +
+      '</div>' +
+      '<p class="desc">' + named + ' states use the name &ldquo;Plan of Safe Care.&rdquo; Others use names such as Plan of Care, Infant Care Plan, or Family Care Plan. Choose a state on the map or from the list to see its details.</p>';
+  }
+
+  function detail(st) {
+    var d = BY[st], c = CAT[d.cat] || CAT["No Policy"];
+    var yr = d.yr ? d.yr + (d.src === "Statute" ? " (state law)" : " (state report)") : null;
+    var moud = d.moud ? "Yes. A report is not required when the only exposure is to prescribed medication, such as methadone or buprenorphine, taken as prescribed." : null;
+    panel.innerHTML =
+      '<span class="kicker">State detail</span>' +
+      '<h3>' + esc(NAMES[st]) + '</h3>' +
+      '<span class="chip"><i style="background:' + c.color + '"></i>' + esc(d.cat) + '</span>' +
+      '<p class="desc">' + esc(c.desc) + ' <a href="https://doi.org/10.1016/j.chiabu.2026.108169">(Lloyd Sieger et al., 2026)</a></p>' +
+      (d.note ? '<p class="statenote">' + esc(d.note) + '</p>' : '') +
+      '<dl>' +
+        row("What the state calls the plan", d.name) +
+        row("Year the Plan of Safe Care policy began", yr) +
+        row("Prescribed medication for opioid use disorder exempt from reporting", moud, "No exemption identified") +
+        row("Purpose of required reports of alcohol use during pregnancy", d.purp, "No reporting requirement identified") +
+        row("Child welfare accepts abuse or neglect reports during pregnancy", d.can) +
+        row("Child welfare accepts referrals for services during pregnancy", d.svc) +
+      '</dl>' +
+      '<button type="button" class="linkbtn" id="back-all">Back to all states</button>';
+    document.getElementById("back-all").addEventListener("click", function () { choose(""); });
+  }
+
+  function choose(st) {
+    current = st; sel.value = st;
+    Array.prototype.forEach.call(map.children, function (b) { b.setAttribute("aria-pressed", b.dataset.st === st ? "true" : "false"); });
+    if (st) detail(st); else overview();
+  }
+  choose("");
+})();
+</script>
+
+
+</body>
+</html>
