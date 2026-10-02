@@ -247,6 +247,12 @@ ul.tk p { color: var(--muted); font-size: 0.97rem; }
 .src-links a { color: var(--brand); text-decoration: none; }
 .src-links a:hover { text-decoration: underline; }
 ol.pubs li:target { background: var(--brand-soft); box-shadow: -12px 0 0 var(--brand-soft), 12px 0 0 var(--brand-soft); }
+sup.fn { font-size: 0.7em; line-height: 0; margin-left: 2px; font-weight: 700; }
+sup.fn a { text-decoration: none; color: var(--brand); padding: 0 2px; }
+sup.fn a:hover { text-decoration: underline; }
+.datanote { display: grid; gap: 10px; }
+ol.srclist { margin: 0; padding-left: 1.4em; display: grid; gap: 6px; max-width: 80ch; }
+ol.srclist li:target { background: var(--brand-soft); border-radius: 6px; }
 .linkbtn { font: inherit; font-size: 0.9rem; background: none; border: 0; padding: 0; color: var(--brand); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; justify-self: start; }
 </style>
 </head>
@@ -344,7 +350,17 @@ ol.pubs li:target { background: var(--brand-soft); box-shadow: -12px 0 0 var(--b
         <div class="panel" id="panel" aria-live="polite"></div>
       </div>
 
-      <p class="datanote">State approaches reflect policy as of 2024 and are classified using the taxonomy in Lloyd Sieger et al. (2026). Other details are based on a review of state statutes, regulations, and federally required child welfare reports (Annual Progress and Services Reports) through 2024. Information on reporting exemptions for medication for opioid use disorder comes from If/When/How: Lawyering for Reproductive Justice, <a href="https://ifwhenhow.org/wp-content/uploads/2026/02/2026-Prenatal-Drug-Exposure-CAPTA-Reporting-Requirements-for-Medical-Professionals.pdf">Prenatal Drug Exposure: CAPTA Reporting Requirements for Medical Professionals</a> (current as of June 2025). Information on the purpose of required reports comes from the National Institute on Alcohol Abuse and Alcoholism&rsquo;s Alcohol Policy Information System, <a href="https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/reporting-requirements/163/about-this-policy">Pregnancy and Alcohol: Reporting Requirements</a>. State policies change. If you know of an update for your state, please email <a href="mailto:msieger@kumc.edu">msieger@kumc.edu</a>.</p>
+      <div class="datanote" id="state-sources">
+        <p><b>Sources for state information.</b> The numbers next to each item in a state&rsquo;s profile match this list.</p>
+        <ol class="srclist">
+          <li id="src-1">Approach, plan name, and year the policy began: Lloyd Sieger, M., et al. (2026). <a href="https://doi.org/10.1016/j.chiabu.2026.108169">A taxonomy of states&rsquo; approaches to plans of safe care</a>. <i>Child Abuse &amp; Neglect</i>, 178, 108169. Based on state statutes, regulations, and federally required child welfare reports through 2024.</li>
+          <li id="src-2">Reporting exemption for medication for opioid use disorder: If/When/How: Lawyering for Reproductive Justice. <a href="https://ifwhenhow.org/wp-content/uploads/2026/02/2026-Prenatal-Drug-Exposure-CAPTA-Reporting-Requirements-for-Medical-Professionals.pdf">Prenatal Drug Exposure: CAPTA Reporting Requirements for Medical Professionals</a>. Current as of June 2025.</li>
+          <li id="src-3">Purpose of required reports: National Institute on Alcohol Abuse and Alcoholism, Alcohol Policy Information System. <a href="https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/reporting-requirements/163">Reporting Requirements</a>.</li>
+          <li id="src-4">Definition of abuse or neglect: National Institute on Alcohol Abuse and Alcoholism, Alcohol Policy Information System. <a href="https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/legal-significance-for-child-abusechild-neglect/160">Legal Significance for Child Abuse/Child Neglect</a>. Policies as of January 1, 2025, with our review of each state&rsquo;s law.</li>
+          <li id="src-5">Reports and referrals during pregnancy: our research team&rsquo;s review of state child welfare policies and contact with state agencies.</li>
+        </ol>
+        <p>State policies change. If you know of an update for your state, please email <a href="mailto:msieger@kumc.edu">msieger@kumc.edu</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -556,7 +572,7 @@ ol.pubs li:target { background: var(--brand-soft); box-shadow: -12px 0 0 var(--b
         <li><span class="src">HHS &middot; SAMHSA and ACF</span><a href="https://ncsacw.acf.hhs.gov/">National Center on Substance Abuse and Child Welfare</a><p>Federal technical assistance on prenatal substance exposure, Plans of Safe Care, and state implementation.</p></li>
         <li><span class="src">U.S. GAO &middot; GAO-18-196</span><a href="https://www.gao.gov/products/gao-18-196">Substance-Affected Infants</a><p>A 2018 federal review of state notification policies, plan requirements, and the help states wanted from HHS.</p></li>
         <li><span class="src">If/When/How &middot; 2025</span><a href="https://ifwhenhow.org/wp-content/uploads/2026/02/2026-Prenatal-Drug-Exposure-CAPTA-Reporting-Requirements-for-Medical-Professionals.pdf">Prenatal Drug Exposure: CAPTA Reporting Requirements for Medical Professionals</a><p>A state-by-state guide to when health care providers must report prenatal substance exposure, including exemptions for prescribed medications.</p></li>
-        <li><span class="src">NIH &middot; NIAAA</span><a href="https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/reporting-requirements/163/about-this-policy">Alcohol Policy Information System: Pregnancy and Alcohol Reporting Requirements</a><p>State-by-state data on whether and why health care providers must report alcohol use during pregnancy.</p></li>
+        <li><span class="src">NIH &middot; NIAAA</span><a href="https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/reporting-requirements/163">Alcohol Policy Information System: Reporting Requirements</a><p>State-by-state data on whether and why health care providers must report drug use during pregnancy.</p></li>
         <li><span class="src">LAPPA &middot; 2022</span><a href="https://legislativeanalysis.org/substance-use-during-pregnancy-and-family-care-plans/">Substance Use During Pregnancy and Family Care Plans</a><p>A fact sheet from the Legislative Analysis and Public Policy Association on identifying and treating pregnant and postpartum women with substance use disorders, notification requirements, and family care plans.</p></li>
         <li><span class="src">Casey Family Programs</span><a href="https://www.casey.org/infant-plans-of-safe-care/">Infant Plans of Safe Care</a><p>An overview of how jurisdictions have designed and carried out Plans of Safe Care.</p></li>
       </ul>
@@ -600,6 +616,7 @@ ol.pubs li:target { background: var(--brand-soft); box-shadow: -12px 0 0 var(--b
     {key:"Open Child Welfare Case", color:"var(--c-open)", desc:"Plans are developed only after a family is found to need child welfare intervention. The plan works as a safety plan or case plan."},
     {key:"No Policy", color:"var(--c-none)", desc:"No statewide Plan of Safe Care policy was identified as of 2024."}
   ];
+  var DEFN = {"AL": "Yes", "AZ": "Yes", "AR": "Yes", "DC": "Yes", "FL": "Yes", "GA": "Yes", "IN": "Yes", "LA": "Yes", "MN": "Yes", "IL": "Yes. A positive newborn test is evidence of neglect in court hearings.", "MD": "Yes, with conditions. Applies only to cocaine, heroin, or methamphetamine, and only if the parent does not take part in or complete treatment.", "OK": "Yes, with conditions. Applies when an assessment also finds the infant at risk of harm.", "SC": "Yes, with conditions. Applies when another of the mother’s children also tested positive or was diagnosed with fetal alcohol syndrome.", "ND": "No. The definition covers prenatal substance use or exposure, not a test result.", "SD": "No. The definition covers prenatal substance use or exposure, not a test result.", "TX": "No. The definition covers prenatal substance use or exposure, not a test result.", "WI": "No. The definition covers prenatal substance use or exposure, not a test result.", "KS": "No. The definition was repealed in July 2025.", "NJ": "Yes"};
   var CAT = {}; CATS.forEach(function (c) { CAT[c.key] = c; });
   var LAYOUT = [["AK",0,0],["ME",0,10],["WI",1,5],["VT",1,9],["NH",1,10],
     ["WA",2,0],["ID",2,1],["MT",2,2],["ND",2,3],["MN",2,4],["IL",2,5],["MI",2,6],["NY",2,8],["MA",2,9],
@@ -647,10 +664,15 @@ ol.pubs li:target { background: var(--brand-soft); box-shadow: -12px 0 0 var(--b
   });
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (m) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]; }); }
-  function row(label, value, emptyText) {
+  var SRC = {1:"https://doi.org/10.1016/j.chiabu.2026.108169", 2:"https://ifwhenhow.org/wp-content/uploads/2026/02/2026-Prenatal-Drug-Exposure-CAPTA-Reporting-Requirements-for-Medical-Professionals.pdf", 3:"https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/reporting-requirements/163", 4:"https://alcoholpolicy.niaaa.nih.gov/apis-policy-topics/legal-significance-for-child-abusechild-neglect/160", 5:"#src-5"};
+  function sup(n) {
+    var ext = SRC[n].charAt(0) !== "#";
+    return '<sup class="fn"><a href="' + SRC[n] + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + ' aria-label="Source ' + n + '">' + n + '</a></sup>';
+  }
+  function row(label, value, emptyText, n) {
     var empty = value === null || value === undefined || value === "" || (Array.isArray(value) && !value.length);
     var v = empty ? (emptyText || "Not identified") : (Array.isArray(value) ? value.join("; ") : value);
-    return '<div><dt>' + esc(label) + '</dt><dd' + (empty ? ' class="none"' : '') + '>' + esc(v) + '</dd></div>';
+    return '<div><dt>' + esc(label) + (n ? sup(n) : '') + '</dt><dd' + (empty ? ' class="none"' : '') + '>' + esc(v) + '</dd></div>';
   }
 
   function overview() {
@@ -677,16 +699,17 @@ ol.pubs li:target { background: var(--brand-soft); box-shadow: -12px 0 0 var(--b
     panel.innerHTML =
       '<span class="kicker">State detail</span>' +
       '<h3>' + esc(NAMES[st]) + '</h3>' +
-      '<span class="chip"><i style="background:' + c.color + '"></i>' + esc(d.cat) + '</span>' +
-      '<p class="desc">' + esc(c.desc) + ' <a href="https://doi.org/10.1016/j.chiabu.2026.108169">(Lloyd Sieger et al., 2026)</a></p>' +
+      '<span class="chip"><i style="background:' + c.color + '"></i>' + esc(d.cat) + sup(1) + '</span>' +
+      '<p class="desc">' + esc(c.desc) + '</p>' +
       (d.note ? '<p class="statenote">' + esc(d.note) + '</p>' : '') +
       '<dl>' +
-        row("What the state calls the plan", d.name) +
-        row("Year the Plan of Safe Care policy began", yr) +
-        row("Prescribed medication for opioid use disorder exempt from reporting", moud, "No exemption identified") +
-        row("Purpose of required reports of alcohol use during pregnancy", d.purp, "No reporting requirement identified") +
-        row("Child welfare accepts abuse or neglect reports during pregnancy", d.can) +
-        row("Child welfare accepts referrals for services during pregnancy", d.svc) +
+        row("What the state calls the plan", d.name, null, 1) +
+        row("Year the Plan of Safe Care policy began", yr, null, 1) +
+        row("Prescribed medication for opioid use disorder exempt from reporting", moud, "No exemption identified", 2) +
+        row("Purpose of required reports of drug use during pregnancy", d.purp, "No reporting requirement identified", 3) +
+        row("State’s definition of abuse or neglect includes a positive infant drug or alcohol test", DEFN[st] || "No", null, 4) +
+        row("Child welfare accepts abuse or neglect reports during pregnancy", d.can, null, 5) +
+        row("Child welfare accepts referrals for services during pregnancy", d.svc, null, 5) +
       '</dl>' +
       '<button type="button" class="linkbtn" id="back-all">Back to all states</button>';
     document.getElementById("back-all").addEventListener("click", function () { choose(""); });
